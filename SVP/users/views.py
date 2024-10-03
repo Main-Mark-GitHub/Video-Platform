@@ -34,9 +34,7 @@ def login(request):
 
             if user[0].password == password:
                 request.session[f"{user[0].id}"] = 'True'
-                # value = request.session.get('key', 'значение по умолчанию')  Получение значения сессии
-                # del request.session['key']  # Удаление ключа из сессии
-                # return redirect(main_page)
+
                 return redirect(f"/account_main/{user[0].id}")
             return render(request, template_name, {"error": "Password is not valid"})
         return render(request, template_name, {"error": "Username is not valid"})
