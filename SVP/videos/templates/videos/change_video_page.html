@@ -1,0 +1,79 @@
+{% extends 'videos/base.html' %}
+
+{% block 'body' %}
+
+
+<form enctype="multipart/form-data" method="post" id="video_form" novalidate="">
+{% csrf_token %}
+
+
+
+<fieldset class="module aligned ">
+
+        <div class="form-row field-title">
+
+
+                <div>
+
+                        <div class="flex-container">
+
+                                <label class="required" for="id_title">Title:</label>
+
+                                    <input type="text" name="title" class="vTextField" maxlength="25" required="" id="id_title">
+
+
+                        </div>
+
+                </div>
+
+
+        </div>
+
+        <div class="form-row field-cover">
+
+
+                <div>
+
+                        <div class="flex-container">
+
+                                <label class="required" for="id_cover">Cover:</label>
+
+                                    <input type="file" name="cover" required="" id="id_cover">
+
+
+                        </div>
+
+                </div>
+
+
+        </div>
+
+        <div class="form-row field-file">
+
+
+                <div>
+
+                        <div class="flex-container">
+
+                                <label class="required" for="id_file">File:</label>
+
+                                    <input type="file" name="file" required="" id="id_file">
+
+
+                        </div>
+
+                </div>
+
+
+        </div>
+
+
+</fieldset>
+
+<div class="container"><input type="submit" value="Change" class="default" name="_change"></div>
+
+</form>
+
+{% endblock %}
+
+

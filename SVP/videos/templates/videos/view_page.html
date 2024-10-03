@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/video.css' %}">
+
+    <title>Sid Video Platform</title>
+</head>
+<body>
+    <div class="vd">
+            {% if error %}
+                <h1>{{ error }}</h1>
+            {% else %}
+                <div>
+
+                    <video width="640" height="360" controls>
+                       <source src="{{video.file.url}}" type="video/mp4">
+                       <source src="{{video.file.url}}" type="video/ogg">
+                    </video>
+                    <h3>{{video.title}}</h3>
+                    <h3>{{video.account}}</h3>
+                    <h6>{{video.uploaded_at}}</h6>
+
+                </div>
+            {% endif %}
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+

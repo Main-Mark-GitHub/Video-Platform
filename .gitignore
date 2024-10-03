@@ -1,0 +1,26 @@
+# Python cache files
+__pycache__/
+*.pyc
+
+# SQLite database
+db.sqlite3
+
+# Media files
+media/
+
+# Migrations (если вы не хотите их загружать)
+users/migrations/
+videos/migrations/
+
+# Local configuration files (если есть)
+*.env
+*.local
+virt/
+
+# PyCharm specific files
+.idea/
+*.iml
+
+
+# Windows specific files
+Thumbs.db

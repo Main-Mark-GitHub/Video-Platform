@@ -1,0 +1,23 @@
+{% extends 'videos/base.html' %}
+
+{% block 'body' %}
+    <h1>{{name}}</h1>
+    <p></p>
+    <a class="blue-link" href="/account_main/{{id}}">Main</a>
+    <a class="blue-link" href="add/{{id}}">Add</a>
+    <p></p>
+    {% for video in videos %}
+
+        <div class="video_container">
+
+            <img src="{{ video.cover.url }}" width="300" height="200" alt="{{video.title}}">
+            <h3>{{video.title}}</h3>
+            <h6>{{video.uploaded_at}}</h6>
+            <a href="/view/{{video.id}}" class="blue-link">view</a>
+            <a href="/account/change/{{id}}/{{video.id}}" class="blue-link">change</a>
+            <a href="delete/{{id}}/{{video.id}}" class="blue-link">delete</a>
+        </div>
+    {% endfor %}
+
+
+{% endblock %}

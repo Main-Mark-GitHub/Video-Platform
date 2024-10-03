@@ -1,0 +1,68 @@
+{% extends 'users/base.html' %}
+
+
+{% block 'body' %}
+
+<form method="post">
+    {% csrf_token %}
+
+
+    <div class="container">
+
+            <div class="form-row field-username">
+
+
+                    <div>
+
+                            <div class="flex-container">
+
+                                    <label class="required" for="id_username">Username:</label>
+
+                                        <input type="text" name="username" class="vTextField" maxlength="15" required="" id="id_username">
+
+
+                            </div>
+
+                    </div>
+
+
+            </div>
+
+            <div class="form-row field-password">
+
+
+                    <div>
+
+                            <div class="flex-container">
+
+                                    <label class="required" for="id_password">Password:</label>
+
+                                        <input type="text" name="password" class="vTextField" maxlength="15" required="" id="id_password">
+
+
+                            </div>
+
+                    </div>
+
+
+            </div>
+
+
+    </div>
+    <span></span>
+    <div class="container">
+        {% if error %}
+            <span>{{error}}</span>
+        {% endif %}
+        <input type="submit" value="Save" class="animated-submit" name="_save" id="inp">
+        <a href="/login" class="blue-link">Do you have an account ?</a>
+    </div>
+</form>
+
+
+
+
+
+
+
+{% endblock %}
