@@ -17,7 +17,7 @@ The platform provides a user-friendly interface and various features to enhance 
 - SQLite 
 - HTML, CSS
 
-### Steps
+### How to clone the repository
 
 1. Clone the repository:
 
