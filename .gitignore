@@ -8,11 +8,11 @@ db.sqlite3
 # Media files
 media/
 
-# Migrations (если вы не хотите их загружать)
+# Migrations
 users/migrations/
 videos/migrations/
 
-# Local configuration files (если есть)
+# Local configuration files
 *.env
 *.local
 virt/
