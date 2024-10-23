@@ -11,5 +11,6 @@ urlpatterns = [
     path("account/add/<id>", views.add_video),
     path("account/change/<id>/<video_id>", views.change_video),
     path("account/delete/<id>/<video_id>", views.delete_video),
+    path("find/<input_string>", views.find),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,19 @@
+{% extends 'videos/base.html' %}
+
+
+{% block 'body' %}
+<div class="container">
+        {% if video %}
+        <div class="video_container">
+            <a href="/view/{{video.id}}" class="no-underline">
+            <img src="{{ video.cover.url }}" width="300" height="200" alt="{{video.title}}">
+            <h3>{{video.title}}</h3>
+            <h6>{{video.uploaded_at}}</h6>
+            </a>
+        </div>
+        {% else %}
+            <h2>Not found any video</h2>
+        {% endif %}
+</div>
+
+{% endblock %}

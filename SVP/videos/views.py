@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Video
 from users.models import Account
-
+import difflib
 
 # Create your views here.
 # see videos
@@ -10,6 +10,10 @@ from users.models import Account
 def account_main(request, id):
     template_name = "videos/account_main_page.html"
     if request.session.get(f'{id}', False):
+        if request.method == "POST":
+
+            return redirect(f"/find/{request.POST.get('data')}")
+
         videos = Video.objects.all()
 
         return render(request, template_name, {"videos": videos, "account": Account.objects.get(id=id)})
@@ -20,6 +24,8 @@ def account_main(request, id):
 def main(request):
 
     template_name = "videos/main.html"
+    if request.method == "POST":
+        return redirect(f"/find/{request.POST.get('data')}")
     videos = Video.objects.all()
 
     return render(request, template_name, {"videos": videos})
@@ -102,3 +108,20 @@ def delete_video(request, id, video_id):
         return render(request, template_name)
 
     return redirect("login")
+
+
+def find(request, input_string):
+    template_name = "videos/find_page.html"
+    videos = []
+    for el in Video.objects.all():
+        videos.append(el.title)
+
+    closest_match = difflib.get_close_matches(input_string,  videos, n=1)
+
+    if closest_match:
+        return render(request, template_name, {"video": Video.objects.get(title=closest_match[0])})
+
+    else:
+        return render(request, template_name)
+
+

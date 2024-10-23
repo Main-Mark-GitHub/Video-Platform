@@ -5,6 +5,13 @@
 <div class="container"><a href="/create" class="blue-link">Create account</a>
         <a href="/login" class="blue-link">Log In</a></div>
     <p></p>
+    <form method="post">
+        {% csrf_token %}
+        <div class="container">
+            <input type="search" placeholder="video platform" name="data">
+            <input type="submit" value="search">
+        </div>
+    </form>
     {% for video in videos %}
 
         <div class="video_container">
