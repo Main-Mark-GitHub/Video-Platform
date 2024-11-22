@@ -1,4 +1,4 @@
-# Video Platform 1.1
+# Video Platform 1.2
 
 Welcome to the Video Platform! This is a web application built with Django that allows users to upload, search, share and watch videos.
 The platform provides a user-friendly interface and various features to enhance the video viewing experience.
@@ -11,6 +11,7 @@ The platform provides a user-friendly interface and various features to enhance 
 - User profiles with uploaded videos
 - Admin panel for managing users and videos
 - Video search
+
 
 ## Technologies Used
 
