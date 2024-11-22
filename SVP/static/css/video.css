@@ -93,3 +93,20 @@ span {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+.channel-link {
+    color: #ffffff;
+    background-color: #003366;
+    width: 20%;
+    height: 10%
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    transition: background-color 0.3s;
+    text-align: center;
+    text-decoration: none;
+}
+
+.channel-link:hover {
+    background-color: #00509e;
+}

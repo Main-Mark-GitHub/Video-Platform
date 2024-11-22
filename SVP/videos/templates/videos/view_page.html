@@ -8,7 +8,7 @@
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/video.css' %}">
 
-    <title>Sid Video Platform</title>
+    <title>Video Platform</title>
 </head>
 <body>
     <div class="vd">
@@ -22,7 +22,7 @@
                        <source src="{{video.file.url}}" type="video/ogg">
                     </video>
                     <h3>{{video.title}}</h3>
-                    <h3>{{video.account}}</h3>
+                    <a class="channel-link" href="/channel/{{video.account.id}}"><h3>{{video.account}}</h3></a>
                     <h6>{{video.uploaded_at}}</h6>
 
                 </div>

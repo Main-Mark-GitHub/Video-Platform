@@ -116,12 +116,21 @@ def find(request, input_string):
     for el in Video.objects.all():
         videos.append(el.title)
 
-    closest_match = difflib.get_close_matches(input_string,  videos, n=1)
+    closest_match = difflib.get_close_matches(input_string,  videos, n=3)
 
     if closest_match:
         return render(request, template_name, {"video": Video.objects.get(title=closest_match[0])})
 
     else:
         return render(request, template_name)
+
+
+def channel(request, id):
+    template_name = "videos/channel.html"
+    account = Account.objects.get(id=id)
+
+    videos = Video.objects.filter(account=account)
+
+    return render(request, template_name, {"videos": videos, "account": account.username})
 
 
